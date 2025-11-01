@@ -12,9 +12,24 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["react"],
+  // Let eslint-plugin-react automatically detect the installed React version
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
   rules: {
     "react/function-component-definition": 0,
     "import/extensions": 0,
+    // Allow double quotes (override Airbnb's single-quote preference)
+    quotes: [
+      "error",
+      "double",
+      { avoidEscape: true, allowTemplateLiterals: true },
+    ],
+    // React 17+ has the new JSX transform so importing React is not required.
+    // Disable the rule that enforces "React in scope" for JSX files.
+    "react/react-in-jsx-scope": 0,
     "react/prop-types": 0,
     "linebreak-style": 0,
     "react/state-in-constructor": 0,
