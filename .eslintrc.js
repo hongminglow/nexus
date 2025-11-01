@@ -21,12 +21,13 @@ module.exports = {
   rules: {
     "react/function-component-definition": 0,
     "import/extensions": 0,
-    // Allow double quotes (override Airbnb's single-quote preference)
-    quotes: [
-      "error",
-      "double",
-      { avoidEscape: true, allowTemplateLiterals: true },
-    ],
+    // Allow either quote style by disabling enforcement entirely
+    quotes: 0,
+    // Treat stylistic whitespace/linebreak rules as non-blocking
+    "operator-linebreak": 0,
+    "implicit-arrow-linebreak": 0,
+    "no-confusing-arrow": 0,
+    "react/jsx-curly-newline": 0,
     // React 17+ has the new JSX transform so importing React is not required.
     // Disable the rule that enforces "React in scope" for JSX files.
     "react/react-in-jsx-scope": 0,
@@ -35,6 +36,7 @@ module.exports = {
     "react/state-in-constructor": 0,
     "import/prefer-default-export": 0,
     "max-len": [2, 550],
+    "comma-dangle": ["error", "always-multiline"],
     "no-multiple-empty-lines": [
       "error",
       {
